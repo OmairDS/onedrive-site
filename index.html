@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Files</title>
+<style>
+  body{font-family:system-ui,sans-serif;max-width:800px;margin:2rem auto;padding:0 1rem;color:#222}
+  input{width:100%;padding:.6rem;margin-bottom:1rem;font-size:1rem}
+  details{margin:.25rem 0 .25rem 1rem}
+  summary{cursor:pointer;font-weight:600}
+  a{display:block;margin:.2rem 0 .2rem 2rem;text-decoration:none;color:#0a58ca}
+  .new{background:#e6f4ea;color:#137333;font-size:.7rem;padding:.1rem .4rem;border-radius:8px;margin-inline-start:.4rem}
+  .meta{color:#888;font-size:.8rem}
+</style>
+</head>
+<body>
+<h1>Files</h1>
+<input id="q" placeholder="Search...">
+<div id="app">Loading...</div>
+<script>
+const WEEK = 7*24*3600*1000;
+const arr = x => x == null ? [] : [].concat(x);
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = b => b > 1048576 ? (b/1048576).toFixed(1)+" MB" : Math.max(1, Math.ceil(b/1024))+" KB";
+const href = p => "files/" + p.split("/").map(encodeURIComponent).join("/");
+let data = [];
+
+function render(items, q) {
+  return arr(items).map(i => {
+    if (i.isFolder) {
+      const inner = render(i.children, q);
+      if (q && !inner && !i.name.toLowerCase().includes(q)) return "";
+      return `<details ${q ? "open" : ""}><summary dir="auto">&#128193; ${esc(i.name)}</summary>${inner}</details>`;
+    }
+    if (q && !i.name.toLowerCase().includes(q)) return "";
+    const isNew = Date.now() - new Date(i.modified) < WEEK;
+    return `<a dir="auto" href="${href(i.path)}">&#128196; ${esc(i.name)}
+      <span class="meta">${fmt(i.size)}</span>${isNew ? '<span class="new">new</span>' : ""}</a>`;
+  }).join("");
+}
+
+function draw() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  document.getElementById("app").innerHTML = render(data, q) || "Nothing found.";
+}
+
+fetch("files.json?" + Date.now())
+  .then(r => r.json())
+  .then(d => { data = arr(d); draw(); })
+  .catch(() => { document.getElementById("app").textContent = "Could not load the file list."; });
+document.getElementById("q").addEventListener("input", draw);
+</script>
+</body>
+</html>
