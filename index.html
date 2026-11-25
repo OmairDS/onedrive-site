@@ -1,157 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Files</title>
+<title>ملفاتنا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0f1e2e; --panel:#15293F; --card:#1b3350; --card-hover:#223d5e;
-  --line:rgba(255,255,255,.09); --text:#eaf1f8; --muted:#93a7bc;
-  --teal:#2E9E8F; --gold:#C9A227; --navy:#1F3864; --r:14px;
-  --shadow:0 6px 24px rgba(0,0,0,.25);
-}
-[data-theme="light"]{
-  --bg:#f2f5f9; --panel:#ffffff; --card:#ffffff; --card-hover:#f4f8fb;
-  --line:rgba(21,41,63,.12); --text:#15293F; --muted:#5d7288;
-  --shadow:0 6px 24px rgba(21,41,63,.08);
+  --cream:#f5f3ee; --ink:#111111; --lime:#d7f26b; --blue:#1d2fe0; --pink:#ff9ecf;
+  --yellow:#ffd23f; --sky:#9ad7ff; --orange:#ffb27a; --white:#ffffff; --muted:#5b5b57;
+  --shadow:5px 5px 0 var(--ink);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0; background:var(--bg); color:var(--text);
-  font-family:"Trebuchet MS",Calibri,system-ui,sans-serif; min-height:100vh;
-  background-image:radial-gradient(1200px 500px at 85% -10%, rgba(46,158,143,.18), transparent 60%),
-                   radial-gradient(900px 400px at -10% 0%, rgba(201,162,39,.10), transparent 60%);
-  background-attachment:fixed;
+  margin:0; background:var(--cream); color:var(--ink); min-height:100vh;
+  font-family:"Tajawal","Segoe UI",Tahoma,system-ui,sans-serif; font-size:16px;
+  background-image:radial-gradient(rgba(17,17,17,.08) 1.2px, transparent 1.2px);
+  background-size:22px 22px;
 }
-.wrap{max-width:960px;margin:0 auto;padding:28px 18px 60px}
+.wrap{max-width:980px;margin:0 auto;padding:18px 18px 70px}
 
-/* header */
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--teal),var(--navy));color:#fff;font-size:22px;box-shadow:var(--shadow)}
-h1{margin:0;font-size:24px;letter-spacing:.2px}
-.sub{color:var(--muted);font-size:13px;margin-top:2px}
-.tbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;
-  width:40px;height:40px;cursor:pointer;font-size:18px}
-.tbtn:hover{border-color:var(--teal)}
+/* top bar */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:var(--ink);color:#fff;border-radius:999px;padding:8px 10px 8px 18px;margin-bottom:34px}
+.bar .logo{font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px;padding-inline-start:8px}
+.bar .logo i{font-style:normal;background:var(--lime);color:var(--ink);width:30px;height:30px;border-radius:50%;
+  display:grid;place-items:center;font-size:16px}
+.pill-btn{border:0;background:var(--lime);color:var(--ink);font-family:inherit;font-weight:800;font-size:14px;
+  border-radius:999px;padding:8px 18px;cursor:pointer}
+.pill-btn:hover{filter:brightness(.95)}
 
-/* stats */
-.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 16px;min-width:110px}
-.stat b{display:block;font-size:20px;color:var(--teal)}
-.stat span{font-size:12px;color:var(--muted)}
+/* hero */
+.hero{margin-bottom:26px}
+h1{margin:0 0 12px;font-size:clamp(34px,7vw,64px);line-height:1.15;font-weight:800;letter-spacing:-.5px}
+h1 mark{background:var(--lime);padding:0 .25em;border-radius:.3em;display:inline-block;transform:rotate(-1.2deg)}
+.sub{color:var(--muted);font-size:clamp(15px,2.4vw,19px);max-width:560px;margin:0}
+
+/* stat stickers */
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 8px}
+.stat{border:3px solid var(--ink);border-radius:16px;padding:10px 18px;box-shadow:var(--shadow);min-width:120px}
+.stat:nth-child(1){background:var(--yellow);transform:rotate(-1.5deg)}
+.stat:nth-child(2){background:var(--pink);transform:rotate(1deg)}
+.stat:nth-child(3){background:var(--sky);transform:rotate(-.8deg)}
+.stat b{display:block;font-size:26px;line-height:1.1}
+.stat span{font-size:13px;font-weight:500}
 
 /* controls */
-.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.search{flex:1;min-width:200px;position:relative}
-.search input{width:100%;padding:12px 14px 12px 40px;border-radius:12px;border:1px solid var(--line);
-  background:var(--panel);color:var(--text);font-size:15px;font-family:inherit;outline:none}
-.search input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(46,158,143,.2)}
-.search i{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-style:normal;opacity:.6}
-select{padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);
-  font-family:inherit;font-size:14px;cursor:pointer}
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 8px}
+.search{flex:1;min-width:220px;position:relative}
+.search input{width:100%;padding:15px 50px;border-radius:999px;border:3px solid var(--ink);background:var(--white);
+  font-family:inherit;font-size:16px;font-weight:500;outline:none;box-shadow:var(--shadow)}
+.search input:focus{box-shadow:5px 5px 0 var(--blue);border-color:var(--ink)}
+.search i{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);font-style:normal}
+select{padding:14px 18px;border-radius:999px;border:3px solid var(--ink);background:var(--white);font-family:inherit;
+  font-size:15px;font-weight:800;cursor:pointer;box-shadow:var(--shadow)}
 
-/* breadcrumb */
-.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0 16px;font-size:14px;color:var(--muted)}
-.crumbs a{color:var(--teal);text-decoration:none;padding:4px 8px;border-radius:8px}
-.crumbs a:hover{background:rgba(46,158,143,.14)}
-.crumbs .cur{color:var(--text);font-weight:700;padding:4px 8px}
+/* breadcrumbs */
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:24px 0 6px;font-weight:800;font-size:15px}
+.crumbs a{color:var(--blue);text-decoration:none;padding:4px 12px;border-radius:999px;border:2px solid transparent}
+.crumbs a:hover{border-color:var(--blue)}
+.crumbs .cur{background:var(--ink);color:#fff;padding:4px 14px;border-radius:999px}
+.crumbs .sep{opacity:.4}
 
-/* section titles */
-.sec{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);margin:22px 0 10px;font-weight:700}
+.sec{display:inline-block;margin:26px 0 14px;font-weight:800;font-size:15px;background:var(--ink);color:var(--lime);
+  padding:5px 16px;border-radius:999px}
 
 /* folders */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
-.folder{display:flex;align-items:center;gap:12px;padding:14px;border-radius:var(--r);background:var(--card);
-  border:1px solid var(--line);text-decoration:none;color:var(--text);transition:.15s}
-.folder:hover{background:var(--card-hover);transform:translateY(-2px);border-color:var(--teal);box-shadow:var(--shadow)}
-.folder .ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:21px;
-  background:rgba(201,162,39,.16);flex:none}
-.folder .nm{font-weight:700;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.folder .ct{font-size:12px;color:var(--muted);margin-top:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.folder{display:flex;align-items:center;gap:14px;padding:16px;border:3px solid var(--ink);border-radius:18px;
+  text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .15s, box-shadow .15s}
+.folder:hover{transform:translate(-2px,-3px) rotate(-1deg);box-shadow:8px 8px 0 var(--ink)}
+.folder .ico{width:46px;height:46px;border-radius:50%;background:var(--white);border:3px solid var(--ink);
+  display:grid;place-items:center;font-size:22px;flex:none}
 .folder>div{min-width:0}
+.folder .nm{font-weight:800;font-size:17px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.folder .ct{font-size:13px;font-weight:500;margin-top:2px}
 
 /* files */
-.list{display:flex;flex-direction:column;gap:8px}
-.file{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:var(--r);background:var(--card);
-  border:1px solid var(--line);transition:.15s}
-.file:hover{background:var(--card-hover);border-color:var(--teal)}
-.badge{width:46px;height:46px;border-radius:11px;display:grid;place-items:center;flex:none;
-  font-size:11px;font-weight:800;color:#fff;letter-spacing:.5px}
+.list{display:flex;flex-direction:column;gap:12px}
+.file{display:flex;align-items:center;gap:14px;padding:12px 14px;border:3px solid var(--ink);border-radius:18px;
+  background:var(--white);box-shadow:var(--shadow);transition:transform .15s}
+.file:hover{transform:translate(-2px,-2px)}
+.badge{width:52px;height:52px;border-radius:14px;border:3px solid var(--ink);display:grid;place-items:center;flex:none;
+  font-size:12px;font-weight:800;letter-spacing:.4px;color:var(--ink);direction:ltr}
 .info{flex:1;min-width:0}
-.info a{color:var(--text);text-decoration:none;font-weight:700;font-size:15px;display:block;
+.info a{color:var(--ink);text-decoration:none;font-weight:800;font-size:17px;display:block;
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.info a:hover{color:var(--teal)}
-.meta{font-size:12px;color:var(--muted);margin-top:3px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.new{background:rgba(46,158,143,.2);color:var(--teal);padding:1px 8px;border-radius:999px;font-weight:700;font-size:11px}
-.dl{flex:none;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:10px;
-  padding:8px 12px;font-size:13px}
-.dl:hover{color:#fff;background:var(--teal);border-color:var(--teal)}
-.path{color:var(--gold)}
+.info a:hover{color:var(--blue)}
+.meta{font-size:13px;color:var(--muted);margin-top:4px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-weight:500}
+.new{background:var(--lime);color:var(--ink);border:2px solid var(--ink);padding:0 10px;border-radius:999px;font-weight:800;
+  font-size:12px;transform:rotate(-3deg)}
+.path{color:var(--blue)}
+.dl{flex:none;text-decoration:none;background:var(--blue);color:#fff;font-weight:800;font-size:14px;
+  border:3px solid var(--ink);border-radius:999px;padding:8px 18px;box-shadow:3px 3px 0 var(--ink)}
+.dl:hover{background:var(--ink)}
 
-.empty{text-align:center;color:var(--muted);padding:50px 10px;border:1px dashed var(--line);border-radius:var(--r)}
-.foot{margin-top:34px;text-align:center;font-size:12px;color:var(--muted)}
-@media(max-width:560px){.dl span{display:none}.stat{flex:1}}
+.empty{text-align:center;padding:50px 10px;border:3px dashed var(--ink);border-radius:20px;font-weight:800;background:var(--white)}
+.foot{margin-top:40px;text-align:center;font-size:13px;color:var(--muted);font-weight:500}
+@media(max-width:560px){.dl span{display:none}.dl{padding:8px 12px}.stat{flex:1;min-width:100px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top">
-    <div class="brand">
-      <div class="logo">&#128193;</div>
-      <div>
-        <h1 id="title">Files</h1>
-        <div class="sub">Browse and download shared files</div>
-      </div>
-    </div>
-    <button class="tbtn" id="theme" title="Light / dark">&#9788;</button>
+  <div class="bar">
+    <div class="logo"><i>&#128193;</i><span id="brand">ملفاتنا</span></div>
+    <button class="pill-btn" id="lang">EN</button>
   </div>
 
-  <div class="stats" id="stats"></div>
+  <div class="hero">
+    <h1><span id="h1a">كل ملفاتك</span> <mark id="h1b">في مكان واحد</mark></h1>
+    <p class="sub" id="sub"></p>
+    <div class="stats" id="stats"></div>
+  </div>
 
   <div class="controls">
-    <div class="search"><i>&#128269;</i><input id="q" placeholder="Search all files and folders..." autocomplete="off"></div>
-    <select id="sort">
-      <option value="name">Sort: Name</option>
-      <option value="new">Sort: Newest</option>
-      <option value="size">Sort: Largest</option>
-    </select>
+    <div class="search"><i>&#128269;</i><input id="q" autocomplete="off"></div>
+    <select id="sort"></select>
   </div>
 
   <div class="crumbs" id="crumbs"></div>
-  <div id="app"><div class="empty">Loading...</div></div>
+  <div id="app"></div>
   <div class="foot" id="foot"></div>
 </div>
 
 <script>
 "use strict";
 const WEEK = 7 * 24 * 3600 * 1000;
+const STR = {
+  ar: { title:"ملفاتنا", h1a:"كل ملفاتك", h1b:"في مكان واحد", sub:"تصفّح وحمّل الملفات المشاركة بسهولة.",
+        search:"ابحث في كل الملفات والمجلدات...", name:"الترتيب: الاسم", newest:"الترتيب: الأحدث", largest:"الترتيب: الأكبر",
+        home:"الرئيسية", folders:"المجلدات", files:"الملفات", results:"نتائج البحث", clear:"مسح",
+        empty:"هذا المجلد فارغ.", nomatch:q=>`لا توجد نتائج لـ "${q}".`, loading:"جارٍ التحميل...",
+        fail:"تعذّر تحميل قائمة الملفات.", dl:"تحميل", tag:"جديد", item:"عنصر", file:"ملف", folder:"مجلد",
+        total:"الحجم الكلي", updated:"آخر تحديث", other:"EN", loc:"ar-SA-u-ca-gregory-nu-latn" },
+  en: { title:"Our Files", h1a:"All your files", h1b:"in one place", sub:"Browse and download shared files with ease.",
+        search:"Search all files and folders...", name:"Sort: Name", newest:"Sort: Newest", largest:"Sort: Largest",
+        home:"Home", folders:"Folders", files:"Files", results:"Search results", clear:"clear",
+        empty:"This folder is empty.", nomatch:q=>`Nothing matches "${q}".`, loading:"Loading...",
+        fail:"Could not load the file list.", dl:"Download", tag:"NEW", item:"items", file:"files", folder:"folders",
+        total:"Total size", updated:"Last updated", other:"عربي", loc:"en-GB" }
+};
+let lang = (() => { try { return localStorage.getItem("lang") || "ar"; } catch (e) { return "ar"; } })();
+const T = k => STR[lang][k];
+
 const arr = x => x == null ? [] : [].concat(x);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const fmtSize = b => b >= 1073741824 ? (b/1073741824).toFixed(1)+" GB"
-                  : b >= 1048576 ? (b/1048576).toFixed(1)+" MB"
-                  : Math.max(1, Math.ceil(b/1024))+" KB";
-const fmtDate = s => { const d = new Date(s); return isNaN(d) ? "" : d.toLocaleDateString(undefined, {year:"numeric", month:"short", day:"numeric"}); };
+const fmtSize = b => b >= 1073741824 ? (b/1073741824).toFixed(1)+" GB" : b >= 1048576 ? (b/1048576).toFixed(1)+" MB" : Math.max(1, Math.ceil(b/1024))+" KB";
+const fmtDate = s => { const d = new Date(s); return isNaN(d) ? "" : d.toLocaleDateString(T("loc"), {year:"numeric", month:"short", day:"numeric"}); };
 const fileHref = p => "files/" + p.split("/").map(encodeURIComponent).join("/");
 const hashFor = parts => "#/" + parts.map(encodeURIComponent).join("/");
+const ext = n => { const i = n.lastIndexOf("."); return i > 0 ? n.slice(i+1).toLowerCase() : ""; };
 
 const TYPES = {
-  pdf:"#d64545", html:"#e8803a", htm:"#e8803a", ppt:"#d9622b", pptx:"#d9622b",
-  xls:"#2e9e5b", xlsx:"#2e9e5b", csv:"#2e9e5b", doc:"#3b7dd8", docx:"#3b7dd8",
-  png:"#8b5cf6", jpg:"#8b5cf6", jpeg:"#8b5cf6", gif:"#8b5cf6", svg:"#8b5cf6", webp:"#8b5cf6",
-  mp4:"#d6479b", mov:"#d6479b", mp3:"#d6479b", wav:"#d6479b",
-  zip:"#6b7c93", rar:"#6b7c93", "7z":"#6b7c93",
-  py:"#3572a5", js:"#c9a227", json:"#c9a227", ps1:"#3b7dd8", txt:"#6b7c93", md:"#6b7c93"
+  pdf:"#ff8a8a", html:"#ffb27a", htm:"#ffb27a", ppt:"#ffb27a", pptx:"#ffb27a",
+  xls:"#b7e68a", xlsx:"#b7e68a", csv:"#b7e68a", doc:"#9ad7ff", docx:"#9ad7ff",
+  png:"#d3b8ff", jpg:"#d3b8ff", jpeg:"#d3b8ff", gif:"#d3b8ff", svg:"#d3b8ff", webp:"#d3b8ff",
+  mp4:"#ff9ecf", mov:"#ff9ecf", mp3:"#ff9ecf", wav:"#ff9ecf",
+  zip:"#d9d6cc", rar:"#d9d6cc", "7z":"#d9d6cc", py:"#ffd23f", js:"#ffd23f", json:"#ffd23f", ps1:"#9ad7ff"
 };
-const ext = n => { const i = n.lastIndexOf("."); return i > 0 ? n.slice(i+1).toLowerCase() : ""; };
+const FOLDER_COLORS = ["#d7f26b", "#ffd23f", "#ff9ecf", "#9ad7ff", "#ffb27a"];
 
 let data = [], updated = null;
 const $ = id => document.getElementById(id);
+const children = n => arr(n.children);
 
-function children(node) { return arr(node.children); }
 function countAll(items) {
   let f = 0, d = 0, bytes = 0;
   arr(items).forEach(i => {
@@ -169,22 +184,18 @@ function nodeAt(parts) {
   }
   return items;
 }
-function flatten(items, out = []) {
-  arr(items).forEach(i => { out.push(i); if (i.isFolder) flatten(i.children, out); });
-  return out;
-}
+function flatten(items, out = []) { arr(items).forEach(i => { out.push(i); if (i.isFolder) flatten(i.children, out); }); return out; }
 function sortItems(list) {
-  const mode = $("sort").value;
   const cmp = {
     name: (a, b) => a.name.localeCompare(b.name, undefined, {numeric:true, sensitivity:"base"}),
     new:  (a, b) => new Date(b.modified || 0) - new Date(a.modified || 0),
     size: (a, b) => (b.size || 0) - (a.size || 0)
-  }[mode];
+  }[$("sort").value];
   return list.slice().sort(cmp);
 }
 
 function fileRow(i, showPath) {
-  const e = ext(i.name), col = TYPES[e] || "#6b7c93";
+  const e = ext(i.name), col = TYPES[e] || "#e6e3da";
   const isNew = Date.now() - new Date(i.modified) < WEEK;
   const dir = i.path.includes("/") ? i.path.slice(0, i.path.lastIndexOf("/")) : "";
   return `<div class="file">
@@ -192,28 +203,50 @@ function fileRow(i, showPath) {
     <div class="info">
       <a dir="auto" href="${fileHref(i.path)}" target="_blank" rel="noopener">${esc(i.name)}</a>
       <div class="meta">
-        <span>${fmtSize(i.size || 0)}</span>
+        <span dir="ltr">${fmtSize(i.size || 0)}</span>
         <span>${fmtDate(i.modified)}</span>
         ${showPath && dir ? `<span class="path" dir="auto">${esc(dir)}</span>` : ""}
-        ${isNew ? '<span class="new">NEW</span>' : ""}
+        ${isNew ? `<span class="new">${T("tag")}</span>` : ""}
       </div>
     </div>
-    <a class="dl" href="${fileHref(i.path)}" download title="Download">&#11015; <span>Download</span></a>
+    <a class="dl" href="${fileHref(i.path)}" download>&#11015; <span>${T("dl")}</span></a>
   </div>`;
 }
-function folderCard(i) {
-  const c = countAll(i.children);
-  const direct = children(i).length;
-  return `<a class="folder" href="${hashFor(i.path.split("/"))}">
+function folderCard(i, idx) {
+  const c = countAll(i.children), direct = children(i).length;
+  return `<a class="folder" style="background:${FOLDER_COLORS[idx % FOLDER_COLORS.length]}" href="${hashFor(i.path.split("/"))}">
     <div class="ico">&#128194;</div>
     <div><div class="nm" dir="auto">${esc(i.name)}</div>
-    <div class="ct">${direct} item${direct === 1 ? "" : "s"} &middot; ${c.f} file${c.f === 1 ? "" : "s"}</div></div>
+    <div class="ct">${direct} ${T("item")} &middot; ${c.f} ${T("file")}</div></div>
   </a>`;
 }
-
 function currentParts() {
   const h = location.hash.replace(/^#\/?/, "");
   return h ? h.split("/").map(decodeURIComponent).filter(Boolean) : [];
+}
+
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.title = T("title");
+  $("brand").textContent = T("title");
+  $("h1a").textContent = T("h1a");
+  $("h1b").textContent = T("h1b");
+  $("sub").textContent = T("sub");
+  $("q").placeholder = T("search");
+  $("lang").textContent = T("other");
+  const cur = $("sort").value || "name";
+  $("sort").innerHTML = `<option value="name">${T("name")}</option><option value="new">${T("newest")}</option><option value="size">${T("largest")}</option>`;
+  $("sort").value = cur;
+}
+
+function stats() {
+  const c = countAll(data);
+  $("stats").innerHTML =
+    `<div class="stat"><b>${c.f}</b><span>${T("files")}</span></div>
+     <div class="stat"><b>${c.d}</b><span>${T("folders")}</span></div>
+     <div class="stat"><b dir="ltr">${fmtSize(c.bytes)}</b><span>${T("total")}</span></div>`;
+  $("foot").textContent = updated ? T("updated") + ": " + updated.toLocaleString(T("loc")) : "";
 }
 
 function draw() {
@@ -222,62 +255,47 @@ function draw() {
   let node = nodeAt(parts);
   if (node === null) { node = data; parts.length = 0; }
 
-  // breadcrumbs
-  let crumbs = parts.length ? `<a href="#/">Home</a>` : `<span class="cur">Home</span>`;
+  let crumbs = parts.length ? `<a href="#/">${T("home")}</a>` : `<span class="cur">${T("home")}</span>`;
   parts.forEach((p, idx) => {
-    crumbs += " / ";
+    crumbs += `<span class="sep">/</span>`;
     crumbs += idx === parts.length - 1
       ? `<span class="cur" dir="auto">${esc(p)}</span>`
       : `<a dir="auto" href="${hashFor(parts.slice(0, idx + 1))}">${esc(p)}</a>`;
   });
-  $("crumbs").innerHTML = q ? `<span class="cur">Search results</span> <a href="#" id="clr">clear</a>` : crumbs;
+  $("crumbs").innerHTML = q ? `<span class="cur">${T("results")}</span><a href="#" id="clr">${T("clear")}</a>` : crumbs;
   const clr = $("clr"); if (clr) clr.onclick = e => { e.preventDefault(); $("q").value = ""; draw(); };
 
   let html = "";
   if (q) {
     const hits = flatten(data).filter(i => i.name.toLowerCase().includes(q));
-    const folders = sortItems(hits.filter(i => i.isFolder));
-    const files = sortItems(hits.filter(i => !i.isFolder));
-    if (folders.length) html += `<div class="sec">Folders (${folders.length})</div><div class="grid">${folders.map(folderCard).join("")}</div>`;
-    if (files.length) html += `<div class="sec">Files (${files.length})</div><div class="list">${files.map(i => fileRow(i, true)).join("")}</div>`;
-    if (!html) html = `<div class="empty">Nothing matches "${esc(q)}".</div>`;
+    const folders = sortItems(hits.filter(i => i.isFolder)), files = sortItems(hits.filter(i => !i.isFolder));
+    if (folders.length) html += `<div class="sec">${T("folders")} (${folders.length})</div><div class="grid">${folders.map(folderCard).join("")}</div>`;
+    if (files.length) html += `<div class="sec">${T("files")} (${files.length})</div><div class="list">${files.map(i => fileRow(i, true)).join("")}</div>`;
+    if (!html) html = `<div class="empty">${esc(T("nomatch")(q))}</div>`;
   } else {
-    const folders = sortItems(node.filter(i => i.isFolder));
-    const files = sortItems(node.filter(i => !i.isFolder));
-    if (folders.length) html += `<div class="sec">Folders</div><div class="grid">${folders.map(folderCard).join("")}</div>`;
-    if (files.length) html += `<div class="sec">Files</div><div class="list">${files.map(i => fileRow(i, false)).join("")}</div>`;
-    if (!html) html = `<div class="empty">This folder is empty.</div>`;
+    const folders = sortItems(node.filter(i => i.isFolder)), files = sortItems(node.filter(i => !i.isFolder));
+    if (folders.length) html += `<div class="sec">${T("folders")}</div><div class="grid">${folders.map(folderCard).join("")}</div>`;
+    if (files.length) html += `<div class="sec">${T("files")}</div><div class="list">${files.map(i => fileRow(i, false)).join("")}</div>`;
+    if (!html) html = `<div class="empty">${T("empty")}</div>`;
   }
   $("app").innerHTML = html;
-  document.title = parts.length ? parts[parts.length - 1] + " - Files" : "Files";
 }
 
-function stats() {
-  const c = countAll(data);
-  $("stats").innerHTML =
-    `<div class="stat"><b>${c.f}</b><span>Files</span></div>
-     <div class="stat"><b>${c.d}</b><span>Folders</span></div>
-     <div class="stat"><b>${fmtSize(c.bytes)}</b><span>Total size</span></div>`;
-  $("foot").textContent = updated ? "Last updated " + updated.toLocaleString() : "";
-}
-
-// theme
-const saved = (() => { try { return localStorage.getItem("theme"); } catch (e) { return null; } })();
-if (saved) document.documentElement.setAttribute("data-theme", saved);
-$("theme").onclick = () => {
-  const next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
-  document.documentElement.setAttribute("data-theme", next);
-  try { localStorage.setItem("theme", next); } catch (e) {}
+$("lang").onclick = () => {
+  lang = lang === "ar" ? "en" : "ar";
+  try { localStorage.setItem("lang", lang); } catch (e) {}
+  applyLang(); stats(); draw();
 };
-
 $("q").addEventListener("input", draw);
 $("sort").addEventListener("change", draw);
 window.addEventListener("hashchange", () => { $("q").value = ""; draw(); window.scrollTo(0, 0); });
 
+applyLang();
+$("app").innerHTML = `<div class="empty">${T("loading")}</div>`;
 fetch("files.json?" + Date.now())
   .then(r => { const lm = r.headers.get("Last-Modified"); if (lm) updated = new Date(lm); return r.json(); })
   .then(d => { data = arr(d); stats(); draw(); })
-  .catch(() => { $("app").innerHTML = '<div class="empty">Could not load the file list.</div>'; });
+  .catch(() => { $("app").innerHTML = `<div class="empty">${T("fail")}</div>`; });
 </script>
 </body>
 </html>
