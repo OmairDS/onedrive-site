@@ -54,6 +54,20 @@
         "isFolder":  true,
         "children":  [
                          {
+                             "name":  "HowToUsePOwerShell",
+                             "path":  "ToShare/HowToUsePOwerShell",
+                             "isFolder":  true,
+                             "children":  [
+                                              {
+                                                  "name":  "Automating Tasks with PowerShell and Task Scheduler.pdf",
+                                                  "path":  "ToShare/HowToUsePOwerShell/Automating Tasks with PowerShell and Task Scheduler.pdf",
+                                                  "isFolder":  false,
+                                                  "size":  375617,
+                                                  "modified":  "2026-11-26T04:02:13.8773825Z"
+                                              }
+                                          ]
+                         },
+                         {
                              "name":  "AI-at-Work-Slides.html",
                              "path":  "ToShare/AI-at-Work-Slides.html",
                              "isFolder":  false,
