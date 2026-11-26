@@ -49,6 +49,27 @@
                      ]
     },
     {
+        "name":  "ToShare",
+        "path":  "ToShare",
+        "isFolder":  true,
+        "children":  [
+                         {
+                             "name":  "AI-at-Work-Slides.html",
+                             "path":  "ToShare/AI-at-Work-Slides.html",
+                             "isFolder":  false,
+                             "size":  1263701,
+                             "modified":  "2026-10-15T12:59:26.3506552Z"
+                         },
+                         {
+                             "name":  "BI_and_Dashboards_Intro_EN.html",
+                             "path":  "ToShare/BI_and_Dashboards_Intro_EN.html",
+                             "isFolder":  false,
+                             "size":  40287,
+                             "modified":  "2026-10-13T14:33:24.7168419Z"
+                         }
+                     ]
+    },
+    {
         "name":  "setup.ps1",
         "path":  "setup.ps1",
         "isFolder":  false,

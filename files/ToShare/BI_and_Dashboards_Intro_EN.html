@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Comprehensive Introduction to Business Intelligence and Dashboards</title>
+<style>
+:root{--bg:#eaeaea;--ink:#4f3f42;--teal:#38809a;--pale:#dbebf2;--dark:#234f60;--orange:#ff7f11;--blue:#1f2bff}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#222;font-family:"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#deck{width:min(100vw,177.78vh);aspect-ratio:16/9;position:relative;background:var(--bg);overflow:hidden;container-type:inline-size}
+section{position:absolute;inset:0;display:none;padding:6cqw 6cqw 7cqw;flex-direction:column;justify-content:center;gap:2cqw}
+section.on{display:flex}
+section.title{border-top:1cqw solid var(--orange)}
+.brand{position:absolute;left:2cqw;bottom:1.4cqw;font-weight:700;font-size:1.3cqw;color:var(--blue)}
+.num{position:absolute;right:2.5cqw;bottom:1.4cqw;font-size:1.3cqw;color:#777}
+h1{font-size:4.2cqw;margin:0;line-height:1.2}
+h2{font-size:3.4cqw;margin:0;color:var(--ink)}
+h3{font-size:2.1cqw;margin:0 0 .6cqw;color:var(--teal)}
+p,li{font-size:1.85cqw;line-height:1.6;color:var(--teal);font-weight:600;margin:0}
+ul{margin:0;padding-left:2.5cqw}
+.tag{display:inline-block;background:var(--pale);color:var(--teal);font-weight:700;font-size:1.5cqw;padding:.5cqw 1.2cqw;border-radius:.8cqw;align-self:flex-start}
+.sub{font-size:2.2cqw}
+.grid{display:grid;gap:1.6cqw}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--pale);border:1px solid #c5d6de;border-radius:1cqw;padding:1.6cqw}
+.card.w{background:#fafafa;border-left:.8cqw solid var(--teal)}
+.card.d{background:var(--teal)}.card.d h3,.card.d p{color:#fff}
+.card p{font-size:1.6cqw;color:#222}
+.card.w p{color:var(--teal)}
+.big{font-size:5.5cqw;font-weight:800;color:var(--teal);line-height:1}
+.pres{background:#d0d0d0;border-radius:1cqw;padding:1.8cqw 2.5cqw;font-size:2.2cqw;color:#000;align-self:flex-start;margin-top:3cqw}
+.row{display:flex;gap:3cqw}.row>*{flex:1}
+#nav{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:8px;opacity:.0;transition:.2s}
+body:hover #nav{opacity:.85}
+#nav button{background:#000a;color:#fff;border:0;padding:6px 14px;border-radius:6px;cursor:pointer}
+@media print{#nav{display:none}#stage{position:static;display:block}#deck{width:100%;aspect-ratio:auto;overflow:visible}section{display:flex!important;position:relative;height:56.25vw;break-after:page}}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+
+<section class="title">
+<div class="brand" style="position:static;font-size:2cqw">Takniat Al-Oloum Training Center</div>
+<h1 style="margin-top:8cqw">A Comprehensive Introduction to Business Intelligence and Dashboards</h1>
+<div class="pres"><b>Trainer:</b> Abdullah Al-Omair</div>
+<p style="margin-top:auto;font-size:1.4cqw;color:#666">TA.COM.SA &nbsp;|&nbsp; @TAforTraining &nbsp;|&nbsp; All rights reserved to Takniat Al-Oloum Company for Training</p>
+</section>
+
+<section>
+<span class="tag">Overview</span><h2>Training Program Tracks</h2>
+<div class="grid g2">
+<div class="card w"><p>01</p><h3>Introduction to Business Intelligence</h3><p>Building conceptual understanding and fundamentals</p></div>
+<div class="card w"><p>02</p><h3>Data Sources and Connections</h3><p>Bringing in data from multiple sources</p></div>
+<div class="card w"><p>03</p><h3>Data Cleaning and Modeling</h3><p>Preparing analysis-ready data</p></div>
+<div class="card w"><p>04</p><h3>Analysis and Visualization</h3><p>Turning data into visual insights</p></div>
+</div></section>
+
+<section><span class="tag">Track One</span><h2 style="font-size:4cqw">Introduction to Business Intelligence and Dashboards</h2><p class="sub">Building conceptual understanding before moving to tools and practical applications</p></section>
+
+<section><h2>What Is Business Intelligence?</h2>
+<p style="max-width:70cqw">Business Intelligence (BI) is a set of tools and technical processes used to turn raw data into meaningful information and actionable insights. It helps organizations make informed decisions based on accurate analysis of historical and current data.</p>
+<div class="grid g3">
+<div class="card"><h3>Collect Data</h3><p>From multiple sources</p></div>
+<div class="card"><h3>Analyze &amp; Transform</h3><p>Into useful information</p></div>
+<div class="card"><h3>Support Decisions</h3><p>Strategic and operational</p></div></div></section>
+
+<section><h2>Core Components of Business Intelligence</h2>
+<div class="grid g2">
+<div><h3>Data Warehouses</h3><p>Central databases that gather information from multiple sources to ease access and comprehensive analysis</p></div>
+<div><h3>Analysis Tools</h3><p>Specialized software for extracting patterns and trends from data and turning them into strategic insights</p></div>
+<div><h3>Dashboards</h3><p>Interactive interfaces that display key indicators visually for easy monitoring and fast decisions</p></div>
+<div><h3>Smart Reports</h3><p>Analytical documents that summarize performance and trends in an organized way, shareable with decision-makers</p></div></div></section>
+
+<section><h2>Benefits of Applying Business Intelligence</h2>
+<div class="grid g4">
+<div class="card w"><h3>Faster, More Accurate Decisions</h3><p>Instant access to analyzed data cuts the time to make critical decisions</p></div>
+<div class="card w"><h3>Better Operational Efficiency</h3><p>Pinpoint gaps and bottlenecks in processes with high accuracy</p></div>
+<div class="card w"><h3>Stronger Competitive Edge</h3><p>Deeper understanding of the market, customers, and competitors</p></div>
+<div class="card w"><h3>Improved Customer Experience</h3><p>Tailor services based on analysis of customer needs and behaviors</p></div></div></section>
+
+<section><h2>Reports vs. Dashboards vs. Analytics</h2>
+<p style="max-width:75cqw;font-size:2.2cqw">Each of these three tools serves a different purpose in the journey from data to decisions. Reports answer “What happened?”, dashboards answer “What is happening now?”, and analytics answer “Why did it happen? And what will happen?”</p></section>
+
+<section><h2>Traditional Reports</h2>
+<div class="row"><div class="card d"><h3>Key Characteristics</h3><p style="color:#fff">Static documents produced periodically</p></div>
+<ul><li>Data shown in a predefined, fixed format</li><li>Usually sent daily, weekly, or monthly</li><li>Focus on numbers and historical facts</li><li>Limited interactivity; no drilling into details</li><li>Suited for documentation and official archiving</li></ul></div></section>
+
+<section><h2>Interactive Dashboards</h2>
+<div class="row"><ul><li>Display live data and key indicators in real time</li><li>Allow interaction, filtering, and moving between data levels</li><li>Provide a comprehensive, quick view of overall performance</li><li>Customizable to each user’s needs</li><li>Combine multiple data sources in one place</li></ul>
+<div class="card d"><h3>Core Value</h3><p style="color:#fff">Real-time monitoring and instant response</p></div></div></section>
+
+<section><h2>Advanced Analytics</h2>
+<div class="grid g2">
+<div class="card"><h3>Descriptive Analytics</h3><p>What happened in the past?</p></div>
+<div class="card"><h3>Diagnostic Analytics</h3><p>Why did this happen?</p></div>
+<div class="card"><h3>Predictive Analytics</h3><p>What might happen in the future?</p></div>
+<div class="card"><h3>Prescriptive Analytics</h3><p>What should be done?</p></div></div></section>
+
+<section><h2>Main Types of Dashboards</h2>
+<div class="grid g3">
+<div class="card"><h3>Operational</h3><p>For daily operations and immediate monitoring.</p></div>
+<div class="card"><h3>Tactical</h3><p>Mid-term monitoring and taking action.</p></div>
+<div class="card"><h3>Strategic</h3><p>To support long-term decisions.</p></div></div>
+<p>Dashboards differ by purpose, target audience, and the level of decisions they support</p></section>
+
+<section><h2>Operational Dashboards</h2>
+<div class="row"><div><h3>Purpose &amp; Use</h3><p>Used to monitor daily operations and real-time performance. They help operational teams spot problems immediately and deal with them before they worsen.</p><h3 style="margin-top:1.5cqw">Practical Examples</h3><ul><li>Live store sales monitoring</li><li>Tracking order and shipment status</li><li>Measuring production line performance</li></ul></div>
+<div class="grid g2" style="align-content:start"><div class="card"><h3>Continuous Refresh</h3><p>Every minute or hour</p></div><div class="card"><h3>Instant Alerts</h3><p>When metrics deviate from standards</p></div><div class="card" style="grid-column:span 2"><h3>Audience</h3><p>Executive and supervisory teams</p></div></div></div></section>
+
+<section><h2>Tactical Dashboards</h2>
+<div class="row"><div><h3>Core Function</h3><p>Focus on analyzing mid-term performance and comparing it with planned targets. They help managers adjust plans and resources based on actual results.</p>
+<h3 style="margin-top:1.2cqw">Who Uses Them?</h3><p>Executive managers and department heads, to track project progress and departmental goals.</p>
+<h3 style="margin-top:1.2cqw">Real-World Examples</h3><ul><li>Evaluating monthly marketing campaign performance</li><li>Comparing sales results across branches</li></ul></div>
+<div class="grid" style="align-content:start"><div class="card w"><h3>1 — Weekly Tracking</h3></div><div class="card w"><h3>2 — Performance Comparison</h3></div><div class="card w"><h3>3 — Trend Identification</h3></div></div></div></section>
+
+<section><h2>Strategic Dashboards</h2>
+<div class="grid g3">
+<div class="card" style="border-radius:3cqw"><h3>A Comprehensive Long-Term View</h3><p>Show strategic performance indicators and progress toward the organization’s annual and future goals</p></div>
+<div class="card" style="border-radius:3cqw"><h3>Senior Leadership Decisions</h3><p>Support executive management in making decisive decisions on overall direction, investments, and expansion</p></div>
+<div class="card" style="border-radius:3cqw"><h3>Less Frequent Updates</h3><p>Usually refreshed monthly or quarterly because they focus on major trends, not daily details</p></div></div></section>
+
+<section><h2>How Do Dashboards Support Decision-Making?</h2>
+<div class="row"><p>Dashboards turn complex numbers into a clear visual story, enabling managers to grasp the current situation quickly and make informed decisions without reading long reports or searching through multiple tables.</p>
+<div class="grid g2"><div class="card"><h3>Pattern Discovery</h3><p>Quickly reveal trends and deviations.</p></div><div class="card"><h3>Root-Cause Analysis</h3><p>Identify the roots behind problems.</p></div><div class="card"><h3>Data Display</h3><p>Deliver clear, measurable visuals.</p></div><div class="card"><h3>Taking Action</h3><p>Carry out calculated strategic decisions.</p></div></div></div>
+<p>From insight to action in clear, systematic steps</p></section>
+
+<section><h2>Example: A Retail Dashboard</h2>
+<div class="row"><div><h3>Scenario</h3><p>A large retail chain wants to monitor all its branches in real time to improve inventory and increase sales.</p><h3 style="margin-top:1.2cqw">Indicators Displayed</h3><ul><li>Daily sales per branch</li><li>Best- and worst-selling products</li><li>Critical inventory levels</li><li>Customer satisfaction rate</li></ul></div>
+<div><h3>Decisions Made</h3><p>Thanks to the dashboard, management was able to:</p><ul><li>Move slow-moving products between branches</li><li>Quickly reorder top-selling products</li><li>Identify branches needing marketing support</li><li>Optimize staff schedules at peak times</li></ul></div></div></section>
+
+<section><h2>Example: A Healthcare Dashboard</h2>
+<div class="grid g3">
+<div class="card w"><h3>The Challenge</h3><p>A large hospital needs to monitor ICU beds and patient flow to avoid overcrowding and ensure quality of service.</p></div>
+<div class="card w"><h3>Key Indicators</h3><p>Bed occupancy rate, average length of stay, incoming emergency cases, recovery and discharge rate, medical staff availability.</p></div>
+<div class="card w"><h3>Impact Achieved</h3><p>Better allocation of medical resources, shorter waiting times, higher bed-utilization efficiency, and faster decisions in critical cases.</p></div></div></section>
+
+<section><h2>Example: A Finance Dashboard</h2>
+<h3>Strategic Goal</h3><p>Help financial management monitor the organization’s financial health and make decisions on investments and cost reduction.</p>
+<h3>Results</h3><p>Identified high-spending departments, improved financial forecasts, and sped up annual budget preparation.</p></section>
+
+<section><h2>Example: An Education Dashboard</h2>
+<div class="row"><div class="card d"><h3>Case Study</h3><p style="color:#fff">A university uses a dashboard to track academic and administrative performance</p></div>
+<div class="grid"><div class="card"><h3>Pass and Fail Rates</h3><p>For each academic program and each semester</p></div><div class="card"><h3>Attendance and Absence Rates</h3><p>To identify at-risk students</p></div><div class="card"><h3>Facility Utilization Efficiency</h3><p>To optimize classroom and lab schedules</p></div></div></div></section>
+
+<section><h2>Shared Benefits Across Sectors</h2>
+<div class="grid g2">
+<div class="card"><h3>Speed of Response</h3><p>Make immediate decisions based on live data</p></div>
+<div class="card"><h3>Forecast Accuracy</h3><p>Use historical data to improve planning</p></div>
+<div class="card"><h3>Cost Reduction</h3><p>Identify waste and improve resource efficiency</p></div>
+<div class="card"><h3>Continuous Improvement</h3><p>Constantly measure performance and apply improvements</p></div></div></section>
+
+<section><span class="tag">Track Two</span><h2 style="font-size:4cqw">Data Sources and Connections</h2><p class="sub">Enabling trainees to bring in data from multiple sources efficiently and professionally</p></section>
+
+<section><h2>The Importance of Choosing the Right Data Source</h2>
+<div class="row"><p>The success of any business intelligence project starts with choosing and connecting data sources correctly. Good data leads to accurate analysis and sound decisions, while weak or unreliable data leads to misleading results and wrong decisions.</p>
+<div class="grid g3"><div class="card"><h3>Define Needs</h3></div><div class="card"><h3>Evaluate Sources</h3></div><div class="card"><h3>Choose the Best Fit</h3></div></div></div>
+<p>A systematic process to ensure data quality at the source</p></section>
+
+<section><h2>Common Types of Data Sources</h2>
+<div class="grid g2">
+<div class="card w"><h3>Excel Files</h3><p>The most common and easiest to use; suitable for small to medium data and quick reports</p></div>
+<div class="card w"><h3>SQL Databases</h3><p>Ideal for large, complex data; offer high performance and advanced query capabilities</p></div>
+<div class="card w"><h3>Cloud Services</h3><p>Such as Azure and Google BigQuery; offer flexibility and integration with modern enterprise systems</p></div>
+<div class="card w"><h3>APIs</h3><p>For connecting to external services such as social media or CRM systems, with automatic refresh</p></div></div></section>
+
+<section><h2>Importing Data from Excel</h2>
+<div class="row"><div><h3>Basic Steps</h3><ol style="margin:0;padding-left:2.5cqw"><li style="font-size:1.8cqw">Open Power BI Desktop and choose “Get Data”</li><li style="font-size:1.8cqw">Select “Excel Workbook” from the list of sources</li><li style="font-size:1.8cqw">Choose the file and the required tables or ranges</li><li style="font-size:1.8cqw">Preview the data and verify it</li><li style="font-size:1.8cqw">Click “Load” or “Transform” as needed</li></ol><h3 style="margin-top:1.2cqw">Best Practices</h3><ul><li>Make sure the data is in a clean tabular format</li><li>Use clear column names</li></ul></div>
+<div class="card d" style="align-self:start"><h3>When Should You Use Excel?</h3><p style="color:#fff">Suitable for small and pilot projects and for data that is updated manually</p></div></div></section>
+
+<section><h2>Connecting to SQL Databases</h2>
+<div class="grid g2">
+<div class="card w"><p>01</p><h3>Choose the Database Type</h3><p>PostgreSQL, MySQL, SQL Server, or others</p></div>
+<div class="card w"><p>02</p><h3>Enter Connection Details</h3><p>Server name, database name, login credentials</p></div>
+<div class="card w"><p>03</p><h3>Choose the Tables</h3><p>Select the required tables and views</p></div>
+<div class="card w"><p>04</p><h3>Set Performance Options</h3><p>Import or DirectQuery, as needed</p></div></div></section>
+
+<section><h2>Connecting to Cloud Databases</h2>
+<div class="row"><div><h3>Common Cloud Services</h3><ul><li><b>Azure SQL Database:</b> fully integrated with Power BI</li><li><b>Google BigQuery:</b> for big data and advanced analytics</li><li><b>Amazon Redshift:</b> a powerful cloud data warehouse</li><li><b>Snowflake:</b> a modern, flexible cloud data platform</li></ul></div>
+<div><h3>Benefits of Cloud Connections</h3><ul><li>No need to install local software</li><li>Flexible scalability as needed</li><li>Automatic updates and high security</li><li>Access from anywhere</li></ul></div></div></section>
+
+<section><h2>The Difference Between Import and DirectQuery</h2>
+<p style="max-width:75cqw;font-size:2.2cqw">Choosing the right mode strongly affects report performance and data freshness. Import offers high speed but requires periodic refresh, while DirectQuery ensures live data but with slower performance.</p></section>
+
+<section><h2>Import Mode: Full Import</h2>
+<div class="grid g4">
+<div class="card"><h3>How It Works</h3><p>A full copy of the data is loaded into Power BI’s memory, making reports very fast</p></div>
+<div class="card"><h3>Advantages</h3><p>Very fast performance, ability to use all DAX features, reports work offline</p></div>
+<div class="card"><h3>Disadvantages</h3><p>Limited data size; data isn’t real-time; requires manual or scheduled refresh</p></div>
+<div class="card"><h3>When to Use It</h3><p>When data size is reasonable and you don’t need continuous live updates</p></div></div></section>
+
+<section><h2>DirectQuery Mode: Direct Querying</h2>
+<div class="grid g4">
+<div class="card w"><h3>How It Works</h3><p>Data isn’t loaded; instead, Power BI sends direct queries to the data source with every interaction</p></div>
+<div class="card w"><h3>Advantages</h3><p>Live, always-fresh data; no limit on data size; higher security because data isn’t stored locally</p></div>
+<div class="card w"><h3>Disadvantages</h3><p>Slower performance that depends on source speed; limits on some DAX operations; requires a constant connection</p></div>
+<div class="card w"><h3>When to Use It</h3><p>When you need real-time data or work with very large databases</p></div></div></section>
+
+<section><h2>Principles for Choosing the Right Source for Performance</h2>
+<div class="row"><div class="card d"><h3>Deciding Factors</h3><p style="color:#fff">Data size, refresh frequency, analysis complexity</p></div>
+<div><h3>Data Size</h3><p>For small data use Import; for very large data use DirectQuery</p><h3 style="margin-top:1cqw">Refresh Frequency</h3><p>If data changes every second, DirectQuery is better</p><h3 style="margin-top:1cqw">Calculation Complexity</h3><p>Complex calculations run more efficiently in Import mode</p></div></div></section>
+
+<section><h2>Best Practices for Setting Up Connections</h2>
+<div class="grid g2">
+<div class="card w"><h3>Document Data Sources</h3><p>Keep a clear record of all connections: source name, type, login details, last refresh date, and owner.</p></div>
+<div class="card w"><h3>Secure Connections</h3><p>Use secure credentials, enable two-factor authentication wherever possible, and avoid storing passwords in text files.</p></div>
+<div class="card w"><h3>Test Performance Regularly</h3><p>Monitor query speed and load times, and optimize or replace slow connections with more efficient methods.</p></div>
+<div class="card w"><h3>Use Data Gateways</h3><p>To connect on-premises data to the Power BI Service, install the Power BI Gateway for secure automatic refresh.</p></div></div></section>
+
+<section><h2>Working with Data Gateways</h2>
+<div class="row"><div><h3>What Is a Gateway?</h3><p>A secure bridge between on-premises data (inside the company network) and the Power BI cloud service, allowing automatic data refresh without opening direct access to the network.</p><h3 style="margin-top:1.2cqw">Gateway Types</h3><ul><li><b>On-premises Gateway:</b> for organizations, supports multiple users</li><li><b>Personal Gateway:</b> for individual use only</li></ul></div>
+<div class="grid" style="align-content:center"><div class="card"><h3>1. Send data locally</h3></div><div class="card"><h3>2. Secure transfer through the gateway</h3></div><div class="card"><h3>3. Power BI receives it</h3></div></div></div>
+<p>A secure, effective way to connect on-premises data to the cloud</p></section>
+
+<section><span class="tag">Track Three</span><h2 style="font-size:4cqw">Data Cleaning and Model Building</h2><p class="sub">Preparing analysis-ready data through proper cleaning and modeling</p></section>
+
+<section><h2>Why Is Data Cleaning Essential?</h2>
+<div class="grid g3" style="text-align:left">
+<div><div class="big">80%</div><h3>of an analyst’s time</h3><p>is spent cleaning data before analysis</p></div>
+<div><div class="big">57%</div><h3>of wrong decisions</h3><p>are caused by unclean or inaccurate data</p></div>
+<div><div class="big">3X</div><h3>performance improvement</h3><p>when using organized, clean data</p></div></div></section>
+
+<section><h2>Introduction to Power Query</h2>
+<div class="row"><div><p>Power Query is a powerful tool built into Power BI for cleaning and transforming data before loading it into the model. It offers an easy visual interface with advanced programming capabilities through the M language for advanced users.</p><h3 style="margin-top:1.5cqw">Key Features</h3><ul><li>Easy interface that requires no coding</li><li>Automatic recording of every cleaning step</li><li>Ability to re-apply the steps to new data</li></ul></div>
+<div class="grid"><div class="card"><h3>Filter</h3><p>Remove erroneous data</p></div><div class="card"><h3>Transform</h3><p>Change structure and shape</p></div><div class="card"><h3>Combine</h3><p>Join data from multiple sources</p></div></div></div></section>
+
+<section><h2>Opening Power Query Editor</h2>
+<div class="row"><div class="grid"><div class="card d"><h3>Open Power BI</h3></div><div class="card"><h3>Choose Transform Data</h3></div></div>
+<div><h3>The Basic Interface</h3><p>Once Power Query opens, you’ll find three main areas:</p><ul><li><b>Queries pane:</b> a list of all queries (tables)</li><li><b>Preview area:</b> preview of the current data</li><li><b>Query Settings:</b> applied steps and properties</li></ul><p style="margin-top:1cqw">Every change you make is recorded as a step that can be edited or deleted later.</p></div></div></section>
+
+<section><h2>Data Cleaning: Handling Empty Values (Nulls)</h2>
+<div class="grid"><div class="card w"><h3>1 — Identify Empty Values</h3><p>Use the column filter to show rows containing null</p></div>
+<div class="card w"><h3>2 — Delete or Replace</h3><p>Delete empty rows if there are few, or replace them with a default value</p></div>
+<div class="card w"><h3>3 — Use Replace Values</h3><p>You can replace null with “Unspecified” or “0” depending on context</p></div></div></section>
+
+<section><h2>Data Cleaning: Removing Duplicates</h2>
+<div class="row"><div><h3>Why Are Duplicates a Problem?</h3><p>Duplicate values distort analysis and inflate results incorrectly. They can occur due to data-entry errors or merging multiple sources.</p><h3 style="margin-top:1.2cqw">The Fix in Power Query</h3><ol style="margin:0;padding-left:2.5cqw"><li style="font-size:1.8cqw">Select the column(s) that define uniqueness</li><li style="font-size:1.8cqw">Right-click and choose “Remove Duplicates”</li><li style="font-size:1.8cqw">Duplicate rows are deleted, keeping only the first occurrence</li></ol></div>
+<div class="card d" style="align-self:start"><h3>Important Tip</h3><p style="color:#fff">Make sure to choose the right columns that define uniqueness; using only one column may delete important data</p></div></div></section>
+
+<section><h2>Data Cleaning: Standardizing Formats</h2>
+<div class="grid g2">
+<div class="card w"><h3>Standardize Names and Text</h3><p>Use Transform &gt; Capitalize Each Word to standardize capitalization, or Trim to remove extra spaces.</p></div>
+<div class="card w"><h3>Date Formatting</h3><p>Make sure all dates use the same format (e.g., yyyy-mm-dd) using Change Type &gt; Date.</p></div>
+<div class="card w"><h3>Number Formatting</h3><p>Set the correct data type: Whole Number for integers, Decimal Number for fractions, Currency for money.</p></div>
+<div class="card w"><h3>Remove Special Characters</h3><p>Use Replace Values to remove unwanted symbols such as # or $ from text columns.</p></div></div></section>
+
+<section><h2>Transforming Data: Split Columns</h2>
+<div class="row"><div><h3>When Do You Use Split?</h3><p>When one column contains multiple pieces of information that need separating. Example: a “Full Name” column containing both first and last names.</p><h3 style="margin-top:1.2cqw">How Do You Split Columns?</h3><ol style="margin:0;padding-left:2.5cqw"><li style="font-size:1.8cqw">Select the column to split</li><li style="font-size:1.8cqw">Choose Split Column &gt; By Delimiter</li><li style="font-size:1.8cqw">Specify the delimiter (e.g., space or comma)</li><li style="font-size:1.8cqw">Choose the number of new columns</li></ol></div>
+<div><h3>Common Examples</h3><ul><li>Split a full name into first and last name</li><li>Split an address into city, street, and postal code</li><li>Split date and time into two separate columns</li><li>Separate the product code from the description</li></ul></div></div></section>
+
+<section><h2>Transforming Data: Merge Columns</h2>
+<div class="row"><div><h3>When Do You Merge Columns?</h3><p>When you need to combine information from two or more columns into one. Example: merging “First Name” and “Last Name” into “Full Name.”</p><h3 style="margin-top:1.2cqw">Merge Steps</h3><ol style="margin:0;padding-left:2.5cqw"><li style="font-size:1.8cqw">Select the columns to merge (Ctrl+Click)</li><li style="font-size:1.8cqw">Choose Merge Columns from the Transform ribbon</li><li style="font-size:1.8cqw">Choose the separator (space, dash, or none)</li><li style="font-size:1.8cqw">Enter a name for the new column</li></ol></div>
+<div class="card d" style="align-self:start"><h3>Tip</h3><p style="color:#fff">Keep the original columns if you’ll need them later by making a copy before merging</p></div></div></section>
+
+<section><h2>Transforming Data: Pivot and Unpivot</h2>
+<h3>Pivot: From Long to Wide</h3><p>Turns the values of a given row into separate columns. Useful for converting data into a wide tabular format.</p>
+<h3>Unpivot: From Wide to Long</h3><p>Turns multiple columns into rows. The best approach for preparing data for analysis in Power BI.</p></section>
+
+<section><h2>Building Relationships Between Tables</h2>
+<div class="row"><div><p>After cleaning and loading the data, you need to link the tables together for comprehensive analysis. Relationships let Power BI understand how the data relates to each other.</p><h3 style="margin-top:1.5cqw">A Simple Example</h3><p>The “Sales” table contains Product_ID, and the “Products” table also contains Product_ID. You can link them so Power BI shows the product name and details with every sale.</p></div>
+<div class="card d" style="align-self:start"><h3>What Are Relationships?</h3><p style="color:#fff">Logical links between different tables through shared fields</p></div></div></section>
+
+<section><h2>Types of Relationships in Power BI</h2>
+<div class="grid g4">
+<div class="card"><h3>One-to-Many (1:*)</h3><p>The most common. Each value in the first table links to multiple values in the second table</p></div>
+<div class="card"><h3>Many-to-One (*:1)</h3><p>The reverse of the above; many values link to one value</p></div>
+<div class="card"><h3>One-to-One (1:1)</h3><p>Each value in one table links to only one value in the other table</p></div>
+<div class="card"><h3>Many-to-Many (*:*)</h3><p>Rarely used. In most cases it requires an intermediate table</p></div></div></section>
+
+<section><h2>Data Modeling: Star Schema</h2>
+<div class="row"><div><h3>What Is a Star Schema?</h3><p>A common database design model that resembles a star: a central table (Fact Table) surrounded by smaller tables (Dimension Tables). It delivers high performance and is easy to understand.</p><h3 style="margin-top:1.2cqw">Components</h3><ul><li><b>Fact Table:</b> contains numeric values (sales, quantities)</li><li><b>Dimension Tables:</b> contain descriptions (product, customer, date)</li></ul></div>
+<div class="grid g2" style="align-content:center"><div class="card d" style="grid-column:span 2;text-align:center"><h3>Fact Table</h3><p style="color:#fff">Sales, quantities, and numeric values</p></div><div class="card"><h3>Customers Table</h3><p>Buyer information and segments</p></div><div class="card"><h3>Dates Table</h3><p>Time, day, and month dimensions</p></div><div class="card"><h3>Products Table</h3><p>Item details and prices</p></div><div class="card"><h3>Regions Table</h3><p>Geographic divisions and sales areas</p></div></div></div>
+<p>A clear, organized structure for better performance</p></section>
+
+<section><h2>Principles of Sound Data Modeling</h2>
+<div class="grid g2">
+<div class="card w"><h3>Use Star Schema or Snowflake</h3><p>Avoid complex and circular relationships that slow performance</p></div>
+<div class="card w"><h3>Separate Facts from Dimensions</h3><p>Put numeric values in tables separate from descriptions</p></div>
+<div class="card w"><h3>Avoid Direct Many-to-Many Relationships</h3><p>Use an intermediate table (Bridge Table) when needed</p></div>
+<div class="card w"><h3>Use Unique Columns for Relationships</h3><p>Make sure the columns used for linking contain no duplicates or empty values</p></div></div></section>
+
+<section><h2>Creating a Relationship in Power BI</h2>
+<div class="row"><div class="grid"><div class="card"><p>01</p><h3>Open Model View</h3><p>From the left sidebar</p></div><div class="card"><p>02</p><h3>Drag the Field</h3><p>From one table to another</p></div><div class="card"><p>03</p><h3>Choose the Relationship Type</h3><p>1:* or others</p></div><div class="card"><p>04</p><h3>Enable Filtering</h3><p>Set the filter direction</p></div></div>
+<div><h3>Important Tips</h3><ul><li>Make sure the data type matches in both fields</li><li>Use the correct Cardinality (1:* is the most common)</li><li>Choose Cross Filter Direction carefully (Single or Both)</li><li>Enable “Make this relationship active” for the primary relationship</li></ul></div></div></section>
+
+<section><span class="tag">Track Four</span><h2 style="font-size:4cqw">Analysis and Visualization in Power BI</h2><p class="sub">Turning data into effective visual insights through analysis tools and professional design</p></section>
+
+<section><h2>Chart Basics in Power BI</h2>
+<div class="row"><div><p>Power BI offers a rich library of charts (Visuals) for presenting data in different ways. Choosing the right chart type strengthens understanding and communicates the message clearly.</p><h3 style="margin-top:1.5cqw">Main Types</h3><ul><li>Column and bar charts for comparisons</li><li>Line charts for time trends</li><li>Pie charts for proportions and distributions</li><li>Tables and cards for detailed figures</li></ul></div>
+<div class="grid g2" style="align-content:center"><div class="card"><h3>Comparisons</h3></div><div class="card"><h3>Trends</h3></div><div class="card"><h3>Proportions</h3></div><div class="card"><h3>Details</h3></div></div></div></section>
+
+<section><h2>Choosing the Right Visual for Each Data Type</h2>
+<h3>Golden Rule</h3><p>Ask yourself: what story do I want to tell? The chart should answer a clear question and not distract attention.</p>
+<h3>Common Mistakes</h3><ul><li>Using a Pie Chart for more than 5 categories</li><li>Using 3D unnecessarily</li><li>Overusing colors and details</li></ul></section>
+
+<section><h2>Filters in Power BI</h2>
+<div class="grid"><div class="card w"><h3>1 — Visual-Level Filter</h3><p>Applies only to one specific chart</p></div>
+<div class="card w"><h3>2 — Page-Level Filter</h3><p>Affects all charts on the current page</p></div>
+<div class="card w"><h3>3 — Report-Level Filter</h3><p>Applies to all pages of the entire report</p></div></div></section>
+
+<section><h2>Interactive Filters: Slicers</h2>
+<div class="row"><div><h3>What Is a Slicer?</h3><p>An interactive visual element placed on the page that lets the user filter data with one click. Easier and faster than using the side Filters pane.</p><h3 style="margin-top:1.2cqw">Slicer Types</h3><ul><li><b>List Slicer:</b> a vertical list of options</li><li><b>Dropdown Slicer:</b> a dropdown list that saves space</li><li><b>Date Range Slicer:</b> for choosing a time range</li><li><b>Numeric Range Slicer:</b> a slider for numbers</li></ul></div>
+<div class="card d" style="align-self:start"><h3>Best Practice</h3><p style="color:#fff">Place Slicers at the top of the page or in a clear sidebar for easy access</p></div></div></section>
+
+<section><h2>Drilling into Data: Drill Down</h2>
+<div class="row"><div><h3>What Is Drill Down?</h3><p>A feature that lets the user move from a general level to a more detailed level. Example: from “Year” to “Quarter” to “Month” to “Day.”</p><h3 style="margin-top:1.2cqw">How Do You Enable It?</h3><ol style="margin:0;padding-left:2.5cqw"><li style="font-size:1.8cqw">Add hierarchical fields to the axis (e.g., Year, Quarter, Month)</li><li style="font-size:1.8cqw">Turn on the Drill Down icon in the chart</li><li style="font-size:1.8cqw">Click any element to drill into it</li></ol></div>
+<div class="grid"><div class="card"><h3>Level 1</h3><p>Year — annual overview</p></div><div class="card"><h3>Level 2</h3><p>Quarter — detailed quarterly analysis</p></div><div class="card"><h3>Level 3</h3><p>Month — precise monthly data</p></div></div></div>
+<p>From general to detailed in smooth steps</p></section>
+
+<section><h2>Interaction Between Charts</h2>
+<div class="grid g2">
+<div class="card w"><h3>Default Cross-Filtering</h3><p>When you click an element in one chart, the other charts are filtered automatically to show only the related data.</p></div>
+<div class="card w"><h3>Cross-Highlighting</h3><p>Instead of hiding unrelated data, it is only dimmed while the related data is highlighted, preserving context.</p></div>
+<div class="card w"><h3>Disabling Interaction</h3><p>You can disable a specific chart’s interaction with others via Edit Interactions in the Format ribbon.</p></div>
+<div class="card w"><h3>Why Interaction Matters</h3><p>It lets the user explore data freely and discover relationships between variables dynamically.</p></div></div></section>
+
+<section><h2>Principles of Professional Dashboard Design</h2>
+<div class="grid g2">
+<div class="card"><h3>Clarity First</h3><p>Avoid clutter; every element must serve a purpose</p></div>
+<div class="card"><h3>Color Consistency</h3><p>Use a defined, harmonious color palette</p></div>
+<div class="card"><h3>Visual Hierarchy</h3><p>Place the most important information at the top or left</p></div>
+<div class="card"><h3>White Space</h3><p>Don’t be afraid to leave empty space for visual comfort</p></div></div></section>
+
+<section><h2>Visual Design Rules (UI/UX)</h2>
+<div class="row"><div class="card d"><h3>The Core Principle</h3><p style="color:#fff">A user should understand the dashboard in under 5 seconds</p></div>
+<div><h3>Use Clear Titles</h3><p>Every chart should have a clear, descriptive title</p><h3 style="margin-top:.8cqw">Reduce the Number of Colors</h3><p>Use only 3–5 main colors, with shades of them for the rest</p><h3 style="margin-top:.8cqw">Mind the Contrast</h3><p>Make sure text is easy to read against backgrounds</p><h3 style="margin-top:.8cqw">Standardize Font Sizes</h3><p>Use only 2–3 sizes: titles, text, details</p></div></div></section>
+
+<section><h2>Common Mistakes in Dashboard Design</h2>
+<div class="grid g4">
+<div class="card"><h3>Excessive Clutter</h3><p>Putting dozens of charts on one page distracts and makes it hard to understand</p></div>
+<div class="card"><h3>Unnecessary 3D</h3><p>3D charts look attractive but distort data and are hard to read</p></div>
+<div class="card"><h3>Inconsistent Formatting</h3><p>Using different colors and fonts on every page looks unprofessional</p></div>
+<div class="card"><h3>Ignoring the Target Audience</h3><p>Designing a dashboard that’s too complex for executives or too simple for analysts</p></div></div></section>
+
+<section><h2>Example: Before and After Improving a Dashboard</h2>
+<div class="row"><div><h3>Before Improvement</h3><ul><li>20 charts on one page</li><li>Random, inconsistent colors</li><li>No clear titles or Slicers</li><li>Complex, hard-to-read 3D charts</li><li>No clear visual hierarchy</li></ul><h3 style="margin-top:1cqw">Result</h3><p>Users feel overwhelmed and can’t find information quickly.</p></div>
+<div><h3>After Improvement</h3><ul><li>Only 6–8 charts on the main page</li><li>A unified palette (3 main colors)</li><li>Clear Slicers at the top</li><li>Simple, easy-to-read 2D charts</li><li>Ordered from most to least important</li></ul><h3 style="margin-top:1cqw">Result</h3><p>Users understand the dashboard instantly and make decisions faster.</p></div></div></section>
+
+<section><h2>Next Steps in Your Learning Journey</h2>
+<div class="grid g2">
+<div class="card"><h3>Apply What You’ve Learned</h3><p>Start a small real project and apply the concepts to your own data</p></div>
+<div class="card"><h3>Explore DAX</h3><p>Learn DAX to create powerful, complex calculated measures</p></div>
+<div class="card"><h3>Go Deeper into Power Query</h3><p>Discover advanced transformations and the M language to automate cleaning</p></div>
+<div class="card"><h3>Earn Certifications</h3><p>Get official Microsoft certifications such as PL-300</p></div></div></section>
+
+<section><h2>Key Points for Review</h2>
+<div class="grid g4">
+<div class="card"><h3>Business Intelligence</h3><p>The process of turning data into actionable insights that support strategic and operational decision-making</p></div>
+<div class="card"><h3>Data Sources</h3><p>Choose the right source (Excel, SQL, Cloud) and decide between Import or DirectQuery based on data size and refresh needs</p></div>
+<div class="card"><h3>Cleaning and Modeling</h3><p>Use Power Query to clean data and a Star Schema for effective relationships between tables</p></div>
+<div class="card"><h3>Analysis and Visualization</h3><p>Choose the chart that suits the message, use Slicers and Drill Down for interactivity, and design professional dashboards</p></div></div></section>
+
+<div class="brand">Takniat Al-Oloum</div><div class="num" id="num"></div>
+</div></div>
+
+<div id="nav"><button onclick="go(-1)">◀ Prev</button><button onclick="go(1)">Next ▶</button></div>
+<script>
+const s=[...document.querySelectorAll('#deck section')];let i=0;
+function show(){s.forEach((x,k)=>x.classList.toggle('on',k===i));document.getElementById('num').textContent=(i+1)+' / '+s.length;history.replaceState(null,'','#'+(i+1))}
+function go(d){i=Math.max(0,Math.min(s.length-1,i+d));show()}
+addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key))go(1);if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key))go(-1);if(e.key==='Home'){i=0;show()}if(e.key==='End'){i=s.length-1;show()}});
+addEventListener('click',e=>{if(e.target.closest('#nav'))return;go(e.clientX>innerWidth/2?1:-1)});
+const h=parseInt(location.hash.slice(1));if(h>0&&h<=s.length)i=h-1;show();
+</script>
+</body>
+</html>
